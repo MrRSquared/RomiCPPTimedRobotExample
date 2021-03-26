@@ -7,8 +7,6 @@
 #include <iostream>
 
 #include <frc/smartdashboard/SmartDashboard.h>
-#include <frc/Joystick.h>
-#include <frc/GenericHID.h>
 
 void Robot::RobotInit() {
   m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
@@ -62,7 +60,7 @@ void Robot::TeleopInit() {}
 
 void Robot::TeleopPeriodic() {
   m_yellowLed.Set(m_buttonA.Get());
-  m_robotDrive.ArcadeDrive(m_xBoxController.GetY(m_xBoxController.kLeftHand), m_xBoxController.GetX(m_xBoxController.kLeftHand));
+  m_robotDrive.ArcadeDrive(-m_xBoxController.GetY(m_xBoxController.kLeftHand), -m_xBoxController.GetX(m_xBoxController.kLeftHand));
 }
 
 void Robot::DisabledInit() {}
